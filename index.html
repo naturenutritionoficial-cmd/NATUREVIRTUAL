@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Virtual Nature — Evolution</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-neutral-900 text-neutral-100 font-sans">
+  <header class="bg-neutral-800/40 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center font-bold">🍀</div>
+        <div>
+          <h1 class="text-xl font-extrabold">Nature</h1>
+          <div class="text-xs text-neutral-300">Campus Virtual • <span class="italic">Evolution</span></div>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-4 items-center text-sm">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#ruta">Ruta</a>
+        <a href="#casos">Casos</a>
+        <a href="#dashboardSection">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-6">
+    <section id="intro" class="mb-6">
+      <h2 class="text-3xl font-extrabold">Campus Virtual <span class="text-emerald-400">Nature</span> — Evolution</h2>
+      <p class="text-neutral-300 mt-2">Plataforma de formación para vendedores: catálogo, casos clínicos, roleplays interactivos y dashboard gamificado. Curso mixto para principiantes y líderes.</p>
+    </section>
+
+    <section id="catalogo" class="mb-6">
+      <h3 class="text-2xl font-bold mb-3">Catálogo</h3>
+      <div id="productGrid" class="grid md:grid-cols-3 gap-4"></div>
+    </section>
+
+    <section id="casos" class="mb-6">
+      <h3 class="text-2xl font-bold mb-3">Buscador de casos y simulaciones</h3>
+      <div class="bg-neutral-800/40 p-5 rounded grid md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <p class="text-sm text-neutral-300">Busca por síntoma, objetivo o producto (ej: "fatiga", "piel", "ajo").</p>
+          <div class="mt-3 flex gap-2">
+            <input id="needInput" type="text" placeholder="ej: fatiga, piel, articulaciones" class="w-full p-3 rounded bg-neutral-900 border border-neutral-700" />
+            <button id="searchBtn" class="px-4 py-3 bg-emerald-600 rounded">Buscar</button>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold">Resultados</h4>
+          <div id="searchResults" class="mt-3 grid sm:grid-cols-2 gap-3"></div>
+        </div>
+      </div>
+
+      <div id="casesList" class="grid md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <section id="dashboardSection" class="mb-6">
+      <h3 class="text-2xl font-bold mb-3">Dashboard</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="p-4 rounded grade">
+          <h4 class="font-bold">Puntaje total</h4>
+          <div id="totalPoints" class="text-3xl font-extrabold mt-3">0 pts</div>
+        </div>
+        <div class="p-4 rounded glass">
+          <h4 class="font-bold">Progreso por producto</h4>
+          <div id="productProgress" class="mt-3 text-sm text-neutral-300"></div>
+        </div>
+        <div class="p-4 rounded glass">
+          <h4 class="font-bold">Medallas</h4>
+          <div id="medals" class="mt-3 flex gap-2"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center p-4">
+    <div class="bg-neutral-900 rounded max-w-3xl w-full p-6 overflow-auto max-h-[90vh]">
+      <button id="closeModal" class="mb-2 text-sm px-3 py-1 bg-neutral-800 rounded">Cerrar</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="cases.js"></script>
+</body>
+</html>
